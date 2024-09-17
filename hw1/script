@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Navigate to the directory where hashcat is extracted
+cd ~/hashcat-6.2.6
+
+# "tbarron:$6$NxJj8hZIPCyq4dSY$THw6cpu8MkkdRXJLsmEG1fTItAaRCaetnZkX2YlY0cv1Ltv/ah9bMzzCdmJLQUgExYWRiJJbydLY7qvLo.cYd0:19983:0:99999:7:::"
+# Ensure hash.txt contains the full hash string
+echo '$6$hZ.FAR/z/0NW4Uj6$7q9WOkYn7EmB9Xb0sPmdnLCWINwVrqnf9usF1/sUN7lpkNQOWewvmz.VxKmTAVcCdaP7ZdQjhY3.wJRo.vjkU.' > ../cs413/hw1/hash.txt
+
+# Run hashcat with the correct hash type
+./hashcat.bin -a 0 -m 1700 ../cs413/hw1/hash.txt ../cs413/hw1/passwords2.csv
